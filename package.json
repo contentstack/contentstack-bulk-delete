@@ -35,7 +35,7 @@
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/contentstack/contentstack-export/issues"
+    "url": "https://github.com/contentstack/contentstack-bulk-delete/issues"
   },
   "repository": {
     "type": "git",
