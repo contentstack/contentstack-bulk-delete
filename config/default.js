@@ -9,6 +9,8 @@ module.exports = {
     ],
   },
   apis: {
+    userSession: '/user-session/',
+    stacks: '/stacks/',
     assets: '/assets/',
     content_types: '/content_types/'
   }
