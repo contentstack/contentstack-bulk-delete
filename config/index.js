@@ -17,5 +17,5 @@ module.exports = {
   content_types_list:'',
   //Bollean value
   //Example: true or false 
-  assetsdelete: 
+  assetsdelete: '',
 };
