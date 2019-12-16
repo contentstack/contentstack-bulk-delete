@@ -1,0 +1,6 @@
+package-lock.json
+node_modules
+logs
+_contents
+_backup*
+npm-debug.log
