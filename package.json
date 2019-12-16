@@ -1,0 +1,56 @@
+{
+  "name": "contentstack-bulk-delete",
+  "version": "1.0.0",
+  "description": "Delete Bulk contentTypes and Assets in Contentstack's",
+  "homepage": "https://www.contentstack.com/docs/tools-and-frameworks/content-migration/within-contentstack",
+  "author": {
+    "name": "Contentstack LLC <support@contentstack.com>",
+    "url": "https://www.contentstack.com/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "3.5.1",
+    "lodash": "4.17.2",
+    "mkdirp": "0.5.1",
+    "request": "2.88.0",
+    "winston": "2.2.0",
+    "debug": "4.1.0"
+  },
+  "main": "app.js",
+  "maintainers": [
+    {
+      "name": "rohitmishra",
+      "email": "rohit.mishra@contentstack.com"
+    },
+    {
+      "name": "ninadhatkar",
+      "email": "ninad.hatkar@contentstack.com"
+    },
+    {
+      "name": "mynk",
+      "email": "mayank@contentstack.com"
+    }
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "bugs": {
+    "url": "https://github.com/contentstack/contentstack-export/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/contentstack/contentstack-export"
+  },
+  "scripts": {
+    "export-entries": "node app.js delete_assets",
+    "export-contenttypes": "node app.js delete_contentTypes"
+  },
+  "keywords": [
+    "contentstack",
+    "migration-utility",
+    "stack-backup"
+  ],
+  "devDependencies": {
+    "eslint": "4.19.1"
+  }
+}
