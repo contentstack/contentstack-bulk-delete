@@ -10,11 +10,14 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "3.5.1",
+    "debug": "4.1.0",
     "lodash": "4.17.2",
     "mkdirp": "0.5.1",
+    "prompt": "^1.0.0",
+    "prompt-confirm": "^2.0.4",
+    "prompts": "^2.3.0",
     "request": "2.88.0",
-    "winston": "2.2.0",
-    "debug": "4.1.0"
+    "winston": "2.2.0"
   },
   "main": "app.js",
   "maintainers": [
