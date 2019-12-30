@@ -36,7 +36,7 @@ login(config).then(function() {
                     if (val && types.indexOf(val) > -1) {
                         var deleteContentType = require('./lib/delete/' + val);
                         return deleteContentType.start().then(function() {
-                            log.success(val + ' was Deleted successfully!');
+                            log.success("Assets" + 'Deleted successfully!');
                             return;
                         }).catch(function(error) {
                             log.error('Failed to ' + val);
