@@ -40,7 +40,7 @@ login(config).then(function() {
                             return;
                         }).catch(function(error) {
                             log.error('Failed to ' + val);
-                            log.error(error);
+                           // log.error(error);
                             return;
                         })
                     } else {
