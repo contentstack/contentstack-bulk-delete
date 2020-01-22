@@ -1,8 +1,8 @@
 {
   "name": "contentstack-bulk-delete",
   "version": "1.0.0",
-  "description": "Delete Bulk contentTypes and Assets in Contentstack's",
-  "homepage": "https://www.contentstack.com/docs/tools-and-frameworks/content-migration/within-contentstack",
+  "description": "Contentstack's Bulk Delete Utility allows you to perform bulk delete operations. That means, that it is possible to delete all content types or a specific content type(s), and all assets in just one operation.",
+  "homepage": "",
   "author": {
     "name": "Contentstack LLC <support@contentstack.com>",
     "url": "https://www.contentstack.com/"
@@ -42,16 +42,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/contentstack/contentstack-export"
+    "url": "https://github.com/contentstack/contentstack-bulk-delete"
   },
   "scripts": {
     "delete-assets": "node app.js delete_assets",
     "delete-contenttypes": "node app.js delete_contentTypes"
   },
   "keywords": [
-    "contentstack",
-    "migration-utility",
-    "stack-backup"
+    "bulk delete entries", 
+    "bulk delete assets", 
+    "bulk delete media files", 
+    "bulk content delete"
   ],
   "devDependencies": {
     "eslint": "4.19.1"

@@ -2,7 +2,7 @@
 
 Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
 
-The Bulk Delete Utility allows you to perform the delete operation on all content types or specific content type(s), and all assets.
+Contentstack's Bulk Delete Utility allows you to perform bulk delete operations. That means, that it is possible to delete all content types or a specific content type(s), and all assets in just one operation.
 
 ## Installation
 
@@ -27,15 +27,13 @@ Update configuration details at config/index.js
  source_stack: '' // Stack api_key
  access_token: '' // Stack access_token
  content_types_list:'', // For specify the specific contenttypes in array eg: ['product', 'category']
-  //Bollean value
-  //Example: true or false 
-  assetsdelete: ''
+ assetsdelete: '' //Set Bollean value, Example: true or false 
  ...
 }
 ```
     
 ## Usage
-After setting the configuration, you'll can run the below given commands!
+After setting the configuration, you can run the below given commands!
 
   
  Delete a specific module

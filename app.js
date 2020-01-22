@@ -1,10 +1,11 @@
-var Bluebird = require('bluebird');
-var util = require('./lib/util');
-var login = require('./lib/util/login');
-var stack = require('./lib/util/stack');
+const Bluebird = require('bluebird');
+const prompt = require('prompt');
+
+const util = require('./lib/util');
+const login = require('./lib/util/login');
+const stack = require('./lib/util/stack');
 var config = require('./config');
 var log = require('./lib/util/log');
-const prompt = require('prompt');
 
 
 
@@ -14,8 +15,6 @@ util.validateConfig(config)
 exports.getConfig = function() {
     return config;
 };
-
-
 
 login(config).then(function() {
     var types = config.modules.types;
@@ -30,7 +29,9 @@ login(config).then(function() {
 
             if (result[message] === config.stack.name) {
 
+                // eslint-disable-next-line no-undef
                 if (process.argv.length === 3) {
+                    // eslint-disable-next-line no-undef
                     var val = process.argv[2];
 
                     if (val && types.indexOf(val) > -1) {
@@ -39,7 +40,7 @@ login(config).then(function() {
                             log.success("Assets" + 'Deleted successfully!');
                             return;
                         }).catch(function(error) {
-                            log.error('Failed to ' + val);
+                            log.error('Failed to Delete ' + val + error);
                            // log.error(error);
                             return;
                         })
@@ -47,6 +48,7 @@ login(config).then(function() {
                         log.error('Please provide valid module name.');
                         return 0;
                     }
+                // eslint-disable-next-line no-undef
                 } else if (process.argv.length === 2) {
                     var counter = 0;
                     return Bluebird.map(types, function(type) {
@@ -57,6 +59,7 @@ login(config).then(function() {
                     }, {
                         concurrency: 1
                     }).then(function() {}).catch(function(error) {
+                        // eslint-disable-next-line no-console
                         console.error(error)
                         // log.error('Failed to migrate stack: ' + config.source_stack + '. Please check error logs for more info');
                         log.error(error);
@@ -66,15 +69,11 @@ login(config).then(function() {
                     return 0;
                 }
             } else {
+                // eslint-disable-next-line no-console
                 console.log("You have Entered Wrong Stack Name");
                 return 0;
-
             }
         });
 
-
     })
-
-
-
 });
