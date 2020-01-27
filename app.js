@@ -51,7 +51,7 @@ login(config).then(function() {
                 // eslint-disable-next-line no-undef
                 } else if (process.argv.length === 2) {
                     var counter = 0;
-                    return Bluebird.map(types, function(type) {
+                    return Bluebird.map(types, function() {
                         log.success('Deleting: ' + types[counter])
                         var deleteModule = require('./lib/delete/' + types[counter]);
                         counter++
@@ -60,8 +60,6 @@ login(config).then(function() {
                         concurrency: 1
                     }).then(function() {}).catch(function(error) {
                         // eslint-disable-next-line no-console
-                        console.error(error)
-                        // log.error('Failed to migrate stack: ' + config.source_stack + '. Please check error logs for more info');
                         log.error(error);
                     });
                 } else {
@@ -71,6 +69,7 @@ login(config).then(function() {
             } else {
                 // eslint-disable-next-line no-console
                 console.log("You have Entered Wrong Stack Name");
+                log.error(err)
                 return 0;
             }
         });
