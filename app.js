@@ -29,7 +29,7 @@ login(config).then(function() {
 
         prompt.get([message], function(err, result) {
             if (result[message] === config.stack.name) {
-            const confirm = new Confirm('The utility will permanently delete all the Content Types and Assets present in the stack that you provide here.Are you sure, you want to continue')
+            const confirm = new Confirm('The utility will delete all the Content Types and Assets present in the stack that you provide here.Are you sure, you want to continue')
             confirm
             .run()
             .then(function(answer) {
