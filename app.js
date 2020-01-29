@@ -1,5 +1,7 @@
 const Bluebird = require('bluebird');
 const prompt = require('prompt');
+const chalk = require('chalk');
+const Confirm = require('prompt-confirm');
 
 const util = require('./lib/util');
 const login = require('./lib/util/login');
@@ -23,21 +25,24 @@ login(config).then(function() {
 
         prompt.start();
 
-        var message = "Please Enter your Stack name, From which you want to delete ?"
+        var message = chalk.red("Please Enter your Stack name, From which you want to delete ?")
 
         prompt.get([message], function(err, result) {
-
             if (result[message] === config.stack.name) {
-
-                // eslint-disable-next-line no-undef
-                if (process.argv.length === 3) {
+            const confirm = new Confirm('The utility will permanently delete all the Content Types and Assets present in the stack that you provide here.Are you sure, you want to continue')
+            confirm
+            .run()
+            .then(function(answer) {
+            // eslint-disable-next-line no-empty
+            if(answer === true) { 
+                 // eslint-disable-next-line no-undef
+                 if (process.argv.length === 3) {
                     // eslint-disable-next-line no-undef
                     var val = process.argv[2];
-
                     if (val && types.indexOf(val) > -1) {
                         var deleteContentType = require('./lib/delete/' + val);
                         return deleteContentType.start().then(function() {
-                            log.success("Assets" + 'Deleted successfully!');
+                            log.success( 'Deletion completed successfully!');
                             return;
                         }).catch(function(error) {
                             log.error('Failed to Delete ' + val + error);
@@ -58,14 +63,23 @@ login(config).then(function() {
                         return deleteModule.start()
                     }, {
                         concurrency: 1
-                    }).then(function() {}).catch(function(error) {
+                    }).then(function() {
+                        log.success("All deletion completed successfully!");
+                    }).catch(function(error) {
                         // eslint-disable-next-line no-console
                         log.error(error);
                     });
                 } else {
                     log.error('Only one module can be deleted at a time.');
                     return 0;
-                }
+                }  
+            } else {
+                return 0;       
+            }
+            }).catch(function (error) {
+            // eslint-disable-next-line no-console
+            return(error);
+            }); 
             } else {
                 // eslint-disable-next-line no-console
                 console.log("You have Entered Wrong Stack Name");
