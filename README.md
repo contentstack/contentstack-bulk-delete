@@ -40,6 +40,7 @@ After setting the configuration, you can run the below given commands!
 ```bash
 $ npm run delete-assets
 $ npm run delete-contenttypes
+$ npm run start
 
 ```
 
