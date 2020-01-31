@@ -1,6 +1,6 @@
 {
   "name": "contentstack-bulk-delete",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Contentstack's Bulk Delete Utility allows you to perform bulk delete operations. That means, that it is possible to delete all content types or a specific content type(s), and all assets in just one operation.",
   "homepage": "",
   "author": {
