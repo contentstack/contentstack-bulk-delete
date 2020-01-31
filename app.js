@@ -1,7 +1,7 @@
 const Bluebird = require('bluebird');
 const prompt = require('prompt');
 const chalk = require('chalk');
-const Confirm = require('prompt-confirm');
+//const Confirm = require('prompt-confirm');
 
 const util = require('./lib/util');
 const login = require('./lib/util/login');
@@ -25,16 +25,10 @@ login(config).then(function() {
 
         prompt.start();
 
-        var message = chalk.red("Please Enter your Stack name, From which you want to delete ?")
+        var message = chalk.red("To confirm the delete action, enter your stack name ?")
 
         prompt.get([message], function(err, result) {
             if (result[message] === config.stack.name) {
-            const confirm = new Confirm('The utility will delete all the Content Types and Assets present in the stack that you provide here.Are you sure, you want to continue')
-            confirm
-            .run()
-            .then(function(answer) {
-            // eslint-disable-next-line no-empty
-            if(answer === true) { 
                  // eslint-disable-next-line no-undef
                  if (process.argv.length === 3) {
                     // eslint-disable-next-line no-undef
@@ -45,7 +39,7 @@ login(config).then(function() {
                             log.success( 'Deletion completed successfully!');
                             return;
                         }).catch(function(error) {
-                            log.error('Failed to Delete ' + val + error);
+                            log.error('Failed to Delete ' +" "+JSON.stringify(error));
                            // log.error(error);
                             return;
                         })
@@ -74,15 +68,8 @@ login(config).then(function() {
                     return 0;
                 }  
             } else {
-                return 0;       
-            }
-            }).catch(function (error) {
-            // eslint-disable-next-line no-console
-            return(error);
-            }); 
-            } else {
                 // eslint-disable-next-line no-console
-                console.log("You have Entered Wrong Stack Name");
+                console.log("Failed. Stack name does not match with stack detail specified in the config file.");
                 log.error(err)
                 return 0;
             }
