@@ -14,7 +14,7 @@
     "lodash": "4.17.2",
     "mkdirp": "0.5.1",
     "prompt": "1.0.0",
-    "prompt-confirm": "^2.0.4",
+    "prompt-confirm": "2.0.4",
     "prompts": "2.3.0",
     "request": "2.88.0",
     "winston": "2.2.0"
@@ -50,9 +50,9 @@
     "start": "node app.js"
   },
   "keywords": [
-    "bulk delete entries", 
-    "bulk delete assets", 
-    "bulk delete media files", 
+    "bulk delete entries",
+    "bulk delete assets",
+    "bulk delete media files",
     "bulk content delete"
   ],
   "devDependencies": {
