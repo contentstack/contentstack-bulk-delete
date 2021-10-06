@@ -25,7 +25,6 @@ Update configuration details at config/index.js
  email: '', // Your registered email id
  password: '', // Account password
  source_stack: '' // Stack api_key
- access_token: '' // Stack access_token
  content_types_list:'', //optional: For specify the specific contenttypes in array eg: ['product', 'category']
  assetsdelete: true //Set Bollean value, Example: true or false 
  ...

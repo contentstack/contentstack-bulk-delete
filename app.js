@@ -40,7 +40,6 @@ login(config).then(function() {
                             return;
                         }).catch(function(error) {
                             log.error('Failed to Delete ' +" "+JSON.stringify(error));
-                           // log.error(error);
                             return;
                         })
                     } else {
