@@ -9,15 +9,16 @@
   },
   "license": "MIT",
   "dependencies": {
-    "bluebird": "3.5.1",
-    "debug": "4.1.0",
-    "lodash": "4.17.2",
-    "mkdirp": "0.5.1",
-    "prompt": "1.0.0",
+    "bluebird": "^3.7.2",
+    "debug": "^4.3.2",
+    "loadash": "^1.0.0",
+    "lodash": "^4.17.21",
+    "mkdirp": "^1.0.4",
+    "prompt": "^1.2.0",
     "prompt-confirm": "2.0.4",
-    "prompts": "2.3.0",
-    "request": "2.88.0",
-    "winston": "2.2.0"
+    "prompts": "^2.4.2",
+    "request": "^2.88.2",
+    "winston": "^2.2.0"
   },
   "main": "app.js",
   "maintainers": [
@@ -56,6 +57,6 @@
     "bulk content delete"
   ],
   "devDependencies": {
-    "eslint": "4.19.1"
+    "eslint": "^7.32.0"
   }
 }
