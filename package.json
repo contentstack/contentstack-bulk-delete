@@ -18,7 +18,7 @@
     "prompt-confirm": "2.0.4",
     "prompts": "^2.4.2",
     "request": "^2.88.2",
-    "winston": "^2.2.0"
+    "winston": "^3.8.1"
   },
   "main": "app.js",
   "maintainers": [
